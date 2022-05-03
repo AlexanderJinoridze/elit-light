@@ -1,0 +1,62 @@
+header {
+    #logo {
+        width: 184px;
+        height: 100px;
+        background: #fff url("../images/logo.png") right top no-repeat;
+        box-shadow: 0 0 40px 40px #fff;
+        border-radius: 12px;
+    }
+
+    #main-menu {
+        margin: 1rem -.5rem;
+
+        .nav-item {
+            position: relative;
+
+            &:not(:first-of-type)::before {
+                content: '';
+                display: block;
+                position: absolute;
+                width: 5px;
+                height: 5px;
+                transform: translate(-50%,-50%) rotate(45deg);
+                background: #fff;
+                top: 50%;
+                left: 0;
+                box-shadow: 0 0 1px #000;
+            }
+        }
+
+
+        #lang-soc-panel {
+            & > * {
+                width: 30px;
+                height: 30px;
+                background-position: center;
+                background-size: auto 100%;
+                background-repeat: no-repeat;
+                box-shadow: 0 1px 2px rgba(0,0,0,.5);
+                border-radius: 6px;
+                display: inline-block;
+                margin: 2px;
+                transition: box-shadow .2s ease;
+
+                &:hover {
+                    box-shadow: 0 0 8px rgba(255,255,255,.5);
+                }
+    
+                &:nth-of-type(1) {
+                    background-image: url("../images/f.svg");
+                }
+    
+                &:nth-of-type(2) {
+                    background-image: url("../images/ka.svg");
+                }
+    
+                &:nth-of-type(3) {
+                    background-image: url("../images/en.svg");
+                }
+            }
+        }
+    }
+}

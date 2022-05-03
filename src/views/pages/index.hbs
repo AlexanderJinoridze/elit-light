@@ -1,0 +1,39 @@
+{{!-- pages/index.hbs --}}
+
+{{#> ../layouts/base title="Elit light - Home" lang="ka" }}
+
+    {{#*inline "slider"}}
+        <div id="slider" class="el-white-semi-panel with-bg-cont p-0">
+            <ul class="p-0 m-0 fs-0">
+                {{> ../includes/mp_slide si_1="1.jpg" si_2="6.jpg" si_3="11.jpg" si_4="16.jpg"}}
+                {{> ../includes/mp_slide si_1="2.jpg" si_2="7.jpg" si_3="12.jpg" si_4="17.jpg"}}
+                {{> ../includes/mp_slide si_1="3.jpg" si_2="8.jpg" si_3="13.jpg" si_4="18.jpg"}}
+                {{> ../includes/mp_slide si_1="4.jpg" si_2="9.jpg" si_3="14.jpg" si_4="19.jpg"}}
+                {{> ../includes/mp_slide si_1="5.jpg" si_2="10.jpg" si_3="15.jpg" si_4="20.jpg"}}
+            </ul>
+        </div>
+    {{/inline}}
+
+    {{#*inline "main-block"}}
+        <h1>"Elit light"-ი მოგესალმებათ!!</h1>
+        <p>აქ თქვენ იპოვით ყველანაირი ტიპის სანათებს, ტორშერებს, ბრებს, ნათურებს და მრავალ სხვა პროდუქციას მსოფლიოს წამყვანი ბრენდებისგან და ეს ყველაფერი მისაღებ ფასად და ერთ წლიანი გარანტიით.</p>
+        <p>თუ დაინტერესდით დაათვალიერეთ ჩვენი კატალოგები:</p>
+
+        <div class="row my-4">
+            <div class="col-12 col-md-6 mb-2 mb-md-0">
+                {{> ../includes/catalogue_sm image="//placehold.it/500x300" title="აქ თქვენ იპოვით ყველანაირი ტიპის სანათებს" fileSize="5.4Mb" downloadLink="#zaza"}}
+            </div>
+            <div class="col-12 col-md-6">
+                {{> ../includes/catalogue_sm image="//placehold.it/300x300" title="ფასად და ერთ წლიანი გარანტიით." fileSize="5.4Mb" downloadLink="#zaza"}}
+            </div>
+        </div>
+
+        <p class="text-center">იპოვეთ რამე საინტერესო?</p>
+        <div class="text-center">
+            <a href="#zaza" class="el-btn a-block py-3 px-4 d-ib">
+                <h2 class="alt-font m-0">ყველა პროდუქცია</h2>
+            </a>
+        </div>
+    {{/inline}}
+
+{{/../layouts/base}}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>{{ title }}</title>
+        <link rel="icon" type="image/png" href="favicon.png">
+    </head>
+    <body>
+        <div id="site-bg">
+            <div id="bg-left"></div>
+            <div id="bg-right"></div>
+        </div>
+
+        <div class="container" id="main-container">
+            {{> ../includes/nav}}
+            {{#> slider}}{{/slider}}
+            {{#> main-block}}{{/main-block}}
+            {{> ../includes/footer}}
+        </div>
+    </body>
+</html>

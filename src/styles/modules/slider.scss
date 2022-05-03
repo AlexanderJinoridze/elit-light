@@ -1,0 +1,114 @@
+@keyframes slider_img_2 {
+    0%,20%{
+        opacity: 0;
+    }
+
+    25%,45%{
+        opacity: 1;
+    }
+    
+    50%,100%{
+        opacity: 0;
+    }
+}
+
+@keyframes slider_img_3 {
+    0%,45% {
+        opacity: 0;
+    }
+
+    50%,70%{
+        opacity: 1;
+    }
+    
+    75%,100%{
+        opacity: 0;
+    }
+}
+
+@keyframes slider_img_4 {
+    0%,70% {
+        opacity: 0;
+    }
+
+    75%,95%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+    }
+}
+
+#slider {
+    & > ul {
+        li.slider-item {
+            display: inline-block;
+            vertical-align: top;
+            width: 20%;
+            border-left: 1px solid #e7e7e7;
+
+            &:first-of-type{
+                border-left: none;
+            }
+
+            .slide {
+                position: relative;
+                width: 80%;
+                margin: 10%;
+
+                .slide-image-container {
+                    &::before {
+                        padding-bottom: 100%;
+                    }
+                }
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    opacity: 0;
+                    border-radius: 4px;
+                    animation-duration: 10s;
+                    animation-timing-function: linear;
+                    animation-iteration-count: infinite;
+
+                    &:nth-of-type(1){
+                        opacity: 1;
+                    }
+
+                    &:nth-of-type(2){
+                        animation-name: slider_img_2;
+                    }
+
+                    &:nth-of-type(3){
+                        animation-name: slider_img_3;
+                    }
+
+                    &:nth-of-type(4){
+                        animation-name: slider_img_4;
+                    }
+                }
+            }
+        }
+
+        li:nth-of-type(1) img {
+            animation-delay: 0s;
+        }
+
+        li:nth-of-type(2) img {
+            animation-delay: .5s;
+        }
+
+        li:nth-of-type(3) img {
+            animation-delay: 1s;
+        }
+
+        li:nth-of-type(4) img {
+            animation-delay: 1.5s;
+        }
+
+        li:nth-of-type(5) img {
+            animation-delay: 2s;
+        }
+    }
+}

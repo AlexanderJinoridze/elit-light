@@ -1,7 +1,15 @@
 const paths = require('./paths')
+const fs = require('fs')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlBeautifyPlugin = require('html-beautify-webpack-plugin')
+const ImageminPlugin = require('imagemin-webpack-plugin').default
+
+const pagesDir = `${paths.src}/views/pages/`
+const pages = fs.readdirSync(pagesDir).filter(fileName => fileName.endsWith('.hbs'))
+
+const webpack = require('webpack')
 
 module.exports = {
   /**
@@ -20,7 +28,7 @@ module.exports = {
    */
   output: {
     path: paths.build,
-    filename: '[name].bundle.js',
+    filename: 'js/[name].bundle.js',
   },
 
   /**
@@ -36,6 +44,11 @@ module.exports = {
      */
     new CleanWebpackPlugin(),
 
+    new webpack.ProvidePlugin({
+      $: require.resolve('jquery'),
+      jQuery: require.resolve('jquery')
+  }),
+
     /**
      * CopyWebpackPlugin
      *
@@ -44,21 +57,36 @@ module.exports = {
     new CopyWebpackPlugin([
       {
         from: paths.static,
-        to: 'assets',
+        to: '',
         ignore: ['*.DS_Store'],
-      },
+      }
     ]),
 
     /**
      * HtmlWebpackPlugin
      *
-     * Generates an HTML file from a template.
+     * Generates an HTML file from a Handlebar files.
      */
-    new HtmlWebpackPlugin({
-      title: 'Webpack Boilerplate',
-      favicon: paths.src + '/images/favicon.png',
-      template: paths.src + '/template.html', // template file
-      filename: 'index.html', // output file
+    ...pages.map(page => new HtmlWebpackPlugin({
+      template: `${pagesDir}/${page}`,
+      filename: `./${page.replace(/\.hbs/,'.html')}`
+    })),
+
+    new HtmlBeautifyPlugin({
+      config: {
+          html: {
+              end_with_newline: true,
+              indent_size: 4,
+              indent_with_tabs: false,
+              indent_inner_html: true,
+              preserve_newlines: false,
+              unformatted: []
+          }
+      }
+    }),
+
+    new ImageminPlugin({
+      disable: process.env.NODE_ENV !== 'production'
     }),
   ],
 
@@ -69,6 +97,15 @@ module.exports = {
    */
   module: {
     rules: [
+      /**
+       * HTML
+       *
+       * Use Handlebars to transform it into HTML
+       */
+      {
+        test: /\.hbs$/,
+        loader: "handlebars-loader"
+      },
       /**
        * JavaScript
        *
