@@ -1,0 +1,12 @@
+#partners {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    gap: 24px;
+
+    & img {
+        height: 120px;
+        max-width: 200px;
+        object-fit: contain;
+    }
+}

@@ -1,0 +1,104 @@
+.image-container {
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.ratio-container {
+    position: relative;
+
+    & > * {
+        width: 100%;
+        height: 100%;
+        top: 0;
+        position: absolute;
+    }
+
+    & > img {
+        object-fit: cover;
+    }
+
+    &::before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 0;
+    }
+
+    &.ratio-1by1 {
+        &::before {
+            padding-bottom: 100%;
+        }
+    }
+
+    &.ratio-6by5 {
+        &::before {
+            padding-bottom: 83.33%;
+        }
+    }
+
+    &.ratio-5by4 {
+        &::before {
+            padding-bottom: 80%;
+        }
+    }
+
+    &.ratio-4by3 {
+        &::before {
+            padding-bottom: 75%;
+        }
+    }
+
+    &.ratio-11by8 {
+        &::before {
+            padding-bottom: 72.72%;
+        }
+    }
+
+    &.ratio-3by2 {
+        &::before {
+            padding-bottom: 66.66%;
+        }
+    }
+
+    &.ratio-14by9 {
+        &::before {
+            padding-bottom: 64.29%;
+        }
+    }
+
+    &.ratio-16by10 {
+        &::before {
+            padding-bottom: 62.5%;
+        }
+    }
+
+    &.ratio-5by3 {
+        &::before {
+            padding-bottom: 60%;
+        }
+    }
+
+    &.ratio-5by3 {
+        &::before {
+            padding-bottom: 60%;
+        }
+    }
+
+    &.ratio-16by9 {
+        &::before {
+            padding-bottom: 56.25%;
+        }
+    }
+
+    &.ratio-3by1 {
+        &::before {
+            padding-bottom: 33.33%;
+        }
+    }
+
+    &.ratio-4by1 {
+        &::before {
+            padding-bottom: 25%;
+        }
+    }
+}

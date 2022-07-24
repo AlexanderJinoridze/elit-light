@@ -1,0 +1,19 @@
+.news-form {
+    &:not(:last-of-type) {
+        padding-bottom: 18px;
+        border-bottom: 2px dotted $gray-200;
+        margin-bottom: 18px;
+    }
+}
+
+.news-date {
+    color: $primary;
+}
+
+.news-title {
+    margin-bottom: 12px;
+}
+
+.news-content {
+    margin: 0;
+}

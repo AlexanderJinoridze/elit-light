@@ -1,0 +1,13 @@
+#catalogs {
+    .catalog-form {
+        &:not(:last-of-type) {
+            margin-bottom: 16px;
+        }
+    }
+}
+
+.catalog-form {
+    & .image-container {
+        width: 80px;
+    }
+}

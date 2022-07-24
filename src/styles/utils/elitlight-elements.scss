@@ -1,0 +1,94 @@
+.el-panel {
+    background-color: $primary;
+    margin: 0;
+    border-radius: 1rem/100%;
+    border: none;
+    border-top: 1px solid #FF9DA1;
+    border-bottom: 1px solid #940000;
+    box-shadow: 0 1px 1px rgba(0,0,0,.25);
+    color: $white;
+    text-shadow: 0 1px 0 $black;
+}
+
+.el-btn {
+    @extend .el-panel;
+    transition: all .3s ease;
+    transition-property: background-color,box-shadow,border-top,border-bottom;
+    box-shadow: 0 1px 2px rgba(0,0,0,.1);
+
+    &:hover {
+        color: #fff;
+        background-color: #ff3039;
+    }
+
+    &:active {
+        background-color: #ff474f;
+        box-shadow: 0 1px 2px rgba(0,0,0,.75);
+        border-top: 1px solid #fff0f0;
+        border-bottom: 1px solid #940000;
+    }
+
+    &-light {
+        @extend .el-btn;
+        background-color: #ff3039;
+
+        &:hover {
+            background-color: #ff474f;
+        }
+
+        &:active {
+            background-color: #ff3039;
+            box-shadow: 0 1px 1px rgba(0,0,0,.25) inset;
+            border-top: 1px solid #940000;
+            border-bottom: 1px solid #FF9DA1;
+        }
+    }
+}
+
+.el-white-semi-panel {
+    border-bottom: 3px solid #bcbcbc;
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 0 0 10px 10px;
+    background: #fff;
+    position: relative;
+    padding: 18.5px;
+    margin-bottom: 30px;
+
+    &::before, &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        position: absolute;
+        left: 0;
+    }
+
+    &.with-bg-cont {
+        &::before {
+            height: 50%;
+            top: 0;
+            background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+            z-index: -1;
+        }
+    }
+
+    &::after {
+        height: 1rem;
+        bottom: 100%;
+        background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+    }
+}
+
+.el-light-panel,.el-dark-panel {
+    border-bottom: 2px solid #bcbcbc;
+    border-radius: 6px;
+}
+
+.el-light-panel  {
+    box-shadow: 0 4px 8px rgba(0,0,0,.12);
+    background: #fbfbfb;
+}
+
+.el-dark-panel {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    background: #eee;
+}

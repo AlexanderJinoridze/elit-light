@@ -1,0 +1,47 @@
+#sulma {
+    background-image: url(images/sulma.svg);
+    width: 70px;
+    height: 30px;
+    margin: 0 auto;
+}
+
+#main-container {
+    margin: 50px 0 50px 100px;
+}
+
+#bg-right,#bg-left {
+    z-index: -1;
+}
+
+#bg-right {
+    width: 100%;
+    height: 100%;
+    min-height: 1200px;
+    min-width: 1750px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background: url("images/bg_right.svg") no-repeat bottom right;
+    background-size: contain;
+}
+
+#bg-left {
+    width: 300px;
+    height: 256px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: url("images/bg_left.svg") no-repeat left top;
+    background-size: auto 100%;
+}
+
+#page_title {
+    border-bottom: 3px solid #eee;
+    padding-bottom: .5rem;
+    margin-bottom: 1rem;
+    font-size: 1.65rem;
+}
+
+#footer {
+    margin-top: 3rem;
+}

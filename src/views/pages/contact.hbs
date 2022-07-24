@@ -1,60 +1,70 @@
-{{!-- pages/about_us.hbs --}}
+{{!-- pages/contact.hbs --}}
 
 {{#> ../layouts/base title="Elit light - Contact" lang="ka" }}
 
     {{#*inline "main-block"}}
         <div class="el-white-semi-panel with-bg-cont">
-            <div id="map_container" class="el-dark-panel p-0">
+            <div class="el-dark-panel p-0">
                 <div class="ratio-container ratio-3by1">
                     <iframe src="https://maps.google.com/maps?q=41.738841%2C%2044.769229&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0"></iframe>
                 </div>
             </div>
         </div>
         <h1 id="page_title">კონტაქტი</h1>
-        <div class="container">
-            <form action="" name="contact_form">
-                <label for="firstname">სახელი</label>
-                <input type="text" name="firstname" id="firstname" placeholder="John"/>
-
-                <label for="email">ელ.ფოსტა</label>
-                <input type="email" name="email" id="email" placeholder="john@doe.com"/>
-
-                <label for="message">შეტყობინება</label>
-                <textarea name="message" id="message" placeholder="zaza"></textarea>
-
-                <button type="submit">ფორმის გაგზავნა</button>
-            </form>
-        </div>
-        <!--<div id="mail_form_container">
-            <form id="mail_form" method="post" action="form-to-email.php">
-                <label for="subject">
-                    <input type="text" id="subject" name="subject">
-                    <div class="input_status_icon"></div>
-                    <span class="input_label">სახელი</span>
-                </label>
-                <label for="email">
-                    <input type="text" id="email" name="email">
-                    <div class="input_status_icon"></div>
-                    <span class="input_label">ელ.ფოსტა</span>
-                </label>
-                <label for="message">
-                    <textarea id="message" name="message"></textarea>
-                    <div class="input_status_icon"></div>
-                    <span class="input_label">შეტყობინება</span>
-                </label>
-                <button type="submit">ფორმის გაგზავნა</button>
-
-
-                            <div class="output_dialog">
-                <div class="dialog_wrapper">
-                    <div class="dialog_inner_wrapper">
-                        <div class="output_icon"></div>
-                        <span></span>
+        <div class="d-flex flex-column flex-md-row">
+            <div class="col col-md-7 p-0">
+                <form>
+                    <div class="form-group">
+                        <label for="subject">თემის დასახელება</label>
+                        <input type="text" class="form-control" id="subject" aria-describedby="subject">
                     </div>
-                </div>
+                    <div class="form-group">
+                        <label for="email">ელ.ფოსტა</label>
+                        <input type="email" class="form-control" id="email" aria-describedby="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">შეტყობინება</label>
+                        <textarea class="form-control" id="message" rows="3"></textarea>
+                    </div>
+                    <button type="button" class="btn el-btn alt-font mx-auto d-block mt-4">ფორმის გაგზავნა</button>
+                </form>
             </div>
-            </form>
-        </div>-->
+            <div class="col ml-0 mt-5 mt-md-0 ml-md-4 col-md-5 p-0">
+                <ul class="contact-list">
+                    <li>
+                        <div class="contact-header">
+                            <span>მთავარი ოფისის:</span>
+                        </div>
+                        <div class="contact-body">
+                            <ul>
+                                <li><strong>9 Jefferson Avenue SE, Orange City,ia, 51041  United States</strong></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="contact-header">
+                            <span>ტელეფონები:</span>
+                        </div>
+                        <div class="contact-body">
+                            <ul>
+                                <li><strong>202-555-0187</strong></li>
+                                <li><strong>202-555-0156</strong></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="contact-header">
+                            <span>ელ.ფოსტა:</span>
+                        </div>
+                        <div class="contact-body">
+                            <ul>
+                                <li><strong>elitlight@somemail.com</strong></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
     {{/inline}}
 
 {{/../layouts/base}}

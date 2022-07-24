@@ -1,10 +1,10 @@
 import './js/main.js'
 import './styles/main.scss'
 
-var req = require.context("./images/uploads", false, /\.(?:ico|gif|png|jpg|jpeg|webp|svg)$/i);
-req.keys().forEach(function(key){
-    req(key);
-});
+// var req = require.context("./images/uploads", false, /\.(?:ico|gif|png|jpg|jpeg|webp|svg)$/i);
+// req.keys().forEach(function(key){
+//     req(key);
+// });
 
 //import WebpackLogo from './images/webpack-logo.svg'
 
